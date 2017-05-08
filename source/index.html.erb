@@ -64,33 +64,20 @@
     <!-- Your next_trip code -->
     <div class="countainer-trip">
       <div class="row">
-
+        <% data.flats.each do |owner, flat| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card-trip" style="background-image: url(images/card-paris.jpg); background-size: cover;">
-            <img class="avatar" src="images/seb.jpg" alt="">
-            <h3>Paris</h3>
-            <h4>Seb's home</h4>
-            <p>Charming room with patio</p>
+          <div class="card-trip" style="background-image: url(<%= image_path flat.picture %>); background-size: cover;">
+            <h3><%= flat.city %></h3>
+            <h4><%= flat.name %></h4>
+            <p><%= flat.summary %></p>
+            <% link_to "flats/#{owner}.html" do %>
+            <%= image_tag flat.owner_picture, class:"avatar" %>
+            <% end %>
+            <%= link_to "", "flats/#{owner}.html", class:"card-link" %>
           </div>
-        </div>
 
-        <div class="col-xs-12 col-sm-4">
-          <div class="card-trip" style="background-image: url(images/card-brussels.jpeg); background-size: cover;">
-            <img class="avatar" src="images/anne.jpg" alt="">
-            <h3>Brussels</h3>
-            <h4>Anne's home</h4>
-            <p>Lovely House</p>
-          </div>
         </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="card-trip" style="background-image: url(images/card-london.jpeg); background-size: cover;">
-            <img class="avatar" src="images/romain.jpg" alt="">
-            <h3>London</h3>
-            <h4>Romain's home</h4>
-            <p>Nice flat in Piccadilly</p>
-          </div>
-        </div>
+        <% end %>
 
       </div>
     </div>
@@ -106,6 +93,7 @@
           <input id="email" type="email" class="form-control" placeholder="bob@gmail.com">
           <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
         </div>
+
 
       </div>
     </div>
