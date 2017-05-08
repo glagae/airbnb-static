@@ -1,10 +1,135 @@
----
-title: Le Wagon Middleman boilerplate
----
+    <!-- Your banner code -->
+    <div class="banner">
+      <div class="banner-content">
+        <h1>Welcome Home</h1>
+        <h2>Rent unique places to stay from local hosts in 190+ countries.</h2>
 
-<div class="welcome text-center padded">
-  <h1>Welcome to Middleman</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p>
-</div>
+        <div class="form-inline">
+          <div class="form-group">
+            <input id="date" type="date" class="form-control" placeholder:"checkin">
+          </div>
+          <div class="form-group">
+            <input id="date" type="date" class="form-control" placeholder:"checkin">
+          </div>
+          <select class="form-control">
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+          </select>
+          <input type="submit" value="Apply" class="btn btn-primary">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Your features code -->
+    <div class="container">
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="card">
+            <img src="images/globe.png" alt="">
+            <h3>Discover the world</h3>
+            <p>The earth is your new home.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="card">
+            <img src="images/dollar.png" alt="">
+            <h3>Pay online</h3>
+            <p>No cash issues anymore.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="card">
+            <img src="images/beer.png" alt="">
+            <h3>Meet people</h3>
+            <p>Discover new culture and lifestyle.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="card">
+            <img src="images/heart.png" alt="">
+            <h3>Share and love</h3>
+            <p>Join a community you will love.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Your next_trip code -->
+    <div class="countainer-trip">
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-trip" style="background-image: url(images/card-paris.jpg); background-size: cover;">
+            <img class="avatar" src="images/seb.jpg" alt="">
+            <h3>Paris</h3>
+            <h4>Seb's home</h4>
+            <p>Charming room with patio</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-trip" style="background-image: url(images/card-brussels.jpeg); background-size: cover;">
+            <img class="avatar" src="images/anne.jpg" alt="">
+            <h3>Brussels</h3>
+            <h4>Anne's home</h4>
+            <p>Lovely House</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-trip" style="background-image: url(images/card-london.jpeg); background-size: cover;">
+            <img class="avatar" src="images/romain.jpeg" alt="">
+            <h3>London</h3>
+            <h4>Romain's home</h4>
+            <p>Nice flat in Piccadilly</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Your newsletter code -->
+    <div class="newsletter">
+      <div class="newsletter-content">
+        <h2>Get news from us</h2>
+        <label for="email">Leave us your mail and get news from us</label>
+
+        <div class="form-inline">
+          <input id="email" type="email" class="form-control" placeholder="bob@gmail.com">
+          <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Your map code -->
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+    var myLatlng = new google.maps.LatLng(48.8655909, 2.378983);
+
+    var myOptions = {
+      zoom: 16,
+      center: myLatlng,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [] // TODO: replace [] by array from https://snazzymaps.com/
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: "You are here!"
+    });
+    </script>
